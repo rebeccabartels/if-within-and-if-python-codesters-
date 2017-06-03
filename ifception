@@ -1,0 +1,21 @@
+sprite = codesters.Sprite("person1", 0, -200)
+
+random_number = random.randint(1,10)
+
+sprite.say("I'm thinking of a number between 1 and 10.")
+stage.wait(1)
+sprite.say("I'll give you three chances to guess.")
+
+
+for counter in range(3):
+    guess = int(sprite.ask("Can you guess my number?"))
+    if guess > random_number:
+        sprite.say("Nope! Too high!")
+        stage.wait(2)
+    if guess < random_number:
+        sprite.say("Nope! Too low!")
+        stage.wait(2)
+    if guess == random_number:
+        sprite.say("You got it!")
+        stage.wait(2)
+        break
